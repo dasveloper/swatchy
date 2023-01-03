@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { Divider } from "@mantine/core";
+
+import { Stack, ScrollArea } from "@mantine/core";
+import SwatchList from "./components/SwatchList";
+import { useSwatches } from "./components/SwatchProvider";
+import AddSwatch from "./components/ColorPicker";
+import ColorMode from "./components/ColorMode";
 
 function App() {
+  const { loadSwatches } = useSwatches();
+
+  useEffect(() => {
+    loadSwatches();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Stack
+      spacing="xs"
+      p="sm"
+      sx={{
+        width: 350,
+        height: 600,
+      }}
+    >
+      <AddSwatch />
+      <ColorMode />
+      <Divider />
+      <ScrollArea sx={{ flex: 1 }}>
+        <SwatchList />
+      </ScrollArea>
+    </Stack>
   );
 }
 
