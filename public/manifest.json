@@ -1,7 +1,7 @@
 {
   "version": "1.0.2",
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Swatchy",
+  "name": "Swatchy",
   "icons": {
     "16": "icon.png",
     "48": "icon.png",
