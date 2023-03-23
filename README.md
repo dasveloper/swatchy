@@ -2,7 +2,7 @@
 
 A chrome extension that allows you to save color swatches in a copy-pastable list.
 
-## Steps to install in Chrome locally:
+## Steps to install on Chrome locally:
 
 1. Clone this repo using `git clone https://github.com/dasveloper/swatchy.git`
 
